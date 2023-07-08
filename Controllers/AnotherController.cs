@@ -39,9 +39,15 @@ namespace UT_JsonRouteTest.Controllers
 		}
 
 		[HttpPost]
+		// Route made this endpoint accessible
+		[Route("/another/createasync")]
+		// This forces the validation of CSRF token
+		//[ValidateAntiForgeryToken]
+		// This annotation allowed to get to the breakpoint
+		// even with ValidateAntiforgeryToken above (order counts ? [I guess so])
+		//[IgnoreAntiforgeryToken]
 		public ActionResult CreateAsync(object anything)
 		{
-
 			return Content("CreateAsync was performed.");
 		}
 
