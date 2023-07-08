@@ -38,6 +38,18 @@ namespace UT_JsonRouteTest.Controllers
 			}
 		}
 
+		[HttpPost]
+		public ActionResult CreateAsync(object anything)
+		{
+
+			return Content("CreateAsync was performed.");
+		}
+
+		public ActionResult CreateNoFormJson()
+		{
+			return View();
+		}
+
 		// GET: AnotherController/Edit/5
 		public ActionResult Edit(int id)
 		{
